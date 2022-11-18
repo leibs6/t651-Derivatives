@@ -88,7 +88,7 @@ def send_email(recipient, Cc, subject, filepath, body):  # Email Script
     #mail.Save()
 
 
-distrolist = Path(r"C:\Users\ELeibowitz\OneDrive - BankUnited, N.A\Long Term Retention\Technical\Py Code Repository\t651-pipelineDistro.txt")
+distrolist = Path(r"i0001-pipelineDistro.txt")
 with open(distrolist) as f:
     recipients = f.read()
 Cc = ""
