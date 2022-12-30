@@ -24,7 +24,7 @@ df_clean = df_raw[~filter_dealname].sort_values(by='Deal Owner')
 
 
 #save Excel file to directory and format it
-dt = "2022-11-18"
+dt = "2022-12-30"
 outpath = Path(r"C:\Users\ELeibowitz\OneDrive - BankUnited, N.A\Long Term Retention\Project Support\t651-Derivative Path\Pipeline Report")
 filename = f"Opportunities({dt}).xlsx"
 
@@ -62,6 +62,7 @@ for col_num, value in enumerate(df_clean.columns.values):
     writer.sheets['Pipeline'].write(0, col_num , value, header_format)
 
 writer.save()
+writer.close()
 
 
 #prepare the email text with attachment
@@ -88,7 +89,7 @@ def send_email(recipient, Cc, subject, filepath, body):  # Email Script
     #mail.Save()
 
 
-distrolist = Path(r"i0001-pipelineDistro.txt")
+distrolist = Path(r"C:\Users\ELeibowitz\ReposGH\t651-Derivatives\i0001-pipelineDistro.txt")
 with open(distrolist) as f:
     recipients = f.read()
 Cc = ""
@@ -119,5 +120,3 @@ target = r"C:\Users\ELeibowitz\Downloads\Opportunities.xlsx"
 Path(target).unlink()	
 
 #put all this on Github under t651 with a subprocess
-
-
