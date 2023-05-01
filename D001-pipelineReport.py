@@ -24,7 +24,7 @@ df_clean = df_raw[~filter_dealname].sort_values(by='Deal Owner')
 
 
 #save Excel file to directory and format it
-dt = "2022-12-30"
+dt = "2023-05-01"
 outpath = Path(r"C:\Users\ELeibowitz\OneDrive - BankUnited, N.A\Long Term Retention\Project Support\t651-Derivative Path\Pipeline Report")
 filename = f"Opportunities({dt}).xlsx"
 
